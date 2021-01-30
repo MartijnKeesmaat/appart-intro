@@ -1,0 +1,176 @@
+$spacing: 3vw;
+$spacing-lr: calc(#{$spacing} * 2);
+
+#intro {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  margin-bottom: 70px; // cookie-banner
+}
+
+/* #region  Sketch */
+.sketch {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh);
+  width: calc(100% - #{$spacing-lr});
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.sketch__poster {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.sketch__canvas {
+  flex: 1;
+}
+/* #endregion */
+
+/* #region  Nav */
+#main-header {
+  position: relative;
+
+  width: 100vw;
+  padding: 8px $spacing;
+  margin-bottom: $spacing;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #000000;
+  background: var(--color-bg);
+
+  .logo {
+    display: flex;
+  }
+}
+
+.main-nav__link {
+  @include swipe-border-hover;
+  margin-right: 40px;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 96%;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+/* #endregion */
+
+/* #region  Cookie banner */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+
+  overflow: hidden;
+}
+
+.cookie-banner__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 19px 23px;
+}
+
+.cookie-banner__disclaimer {
+  margin: 0;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  color: var(--color-text);
+
+  a {
+    @include swipe-border-hover;
+    color: var(--color-main);
+  }
+}
+
+.cookie-banner__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cookie-banner__accept {
+  @include swipe-bg-hover;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 96%;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  padding: 8px 24px;
+  margin-right: 16px;
+
+  border: none;
+  background: var(--color-bg);
+  border-radius: 31px;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cookie-banner__close {
+  display: flex;
+  align-items: center;
+
+  background: none;
+  border: none;
+  transition: 0.3s transform;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+/* #endregion */
+
+/* #region title */
+.title-main {
+  margin-top: calc(#{$spacing} / 2);
+  margin-bottom: calc(#{$spacing} + 10vw);
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: var(--color-text);
+
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    padding-bottom: 1vw;
+  }
+}
+
+/* #endregion */

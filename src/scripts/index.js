@@ -89,18 +89,60 @@ function wrapLines(str, tmpl) {
   };
 })();
 
+/* #region  Intro */
+
+// Fit text
 const $header = document.querySelector('.title-main');
 window.fitText($header, 0.7);
-console.log('$header', $header);
+
+// Split header in spans
 const content = $header.textContent;
 const spans = wrapChars(content);
-
 $header.innerHTML = spans;
 
-gsap.from('.title-main span', {
+// Animate intro
+const introTl = gsap.timeline();
+
+introTl.from('.title-main span', {
   y: '100%',
   stagger: 0.025, // 0.1 seconds between when each ".box" element starts animating
   duration: 1,
   delay: 2.5,
   ease: 'power2.out',
 });
+
+introTl.from(
+  '#main-header',
+  {
+    y: '-100%',
+    duration: 1,
+    ease: 'expo.out',
+    autoAlpha: 0,
+  },
+  '-=.6'
+);
+
+introTl.from(
+  '.cookie-banner__content',
+  {
+    y: '100%',
+    duration: 1,
+    ease: 'expo.out',
+    autoAlpha: 0,
+  },
+  '-=.6'
+);
+
+const hideCookies = () => {
+  gsap.to('.cookie-banner__content', {
+    y: '100%',
+    duration: 1,
+    ease: 'expo.out',
+    autoAlpha: 0,
+  });
+};
+
+const $cookie = [document.querySelector('.cookie-banner__accept'), document.querySelector('.cookie-banner__close')];
+$cookie.forEach((el) => el.addEventListener('click', hideCookies));
+
+/* #endregion */

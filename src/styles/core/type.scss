@@ -2,21 +2,3 @@ a {
   transition: var(--transition1);
   text-decoration: none;
 }
-
-.title-main {
-  margin-top: 15px;
-  margin-bottom: calc(67px + 25px);
-  font-family: 'NeueHaasGroteskDisp Pro Md';
-  line-height: 1;
-  letter-spacing: -0.01em;
-  font-weight: 400;
-  pointer-events: none;
-  user-select: none;
-  color: var(--color-text);
-  overflow: hidden;
-
-  span {
-    display: inline-block;
-    padding-bottom: 8vw;
-  }
-}
