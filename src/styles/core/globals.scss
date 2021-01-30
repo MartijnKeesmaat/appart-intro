@@ -32,10 +32,20 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-color);
 }
-
 /* #endregion */
 
 main {
   font-size: 10vw;
   padding: 3vw;
+}
+
+.click-indicator {
+  position: fixed;
+
+  color: var(--color-text);
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s opacity;
 }

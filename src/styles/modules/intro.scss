@@ -1,4 +1,4 @@
-$spacing: 3vw;
+$spacing: 2.5vw;
 $spacing-lr: calc(#{$spacing} * 2);
 
 #intro {
@@ -6,6 +6,13 @@ $spacing-lr: calc(#{$spacing} * 2);
   max-height: 100vh;
   overflow: hidden;
   margin-bottom: 70px; // cookie-banner
+
+  &:hover {
+    .click-indicator {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 /* #region  Sketch */
@@ -14,6 +21,7 @@ $spacing-lr: calc(#{$spacing} * 2);
   flex: 1;
   justify-content: center;
   flex-direction: column;
+
   height: calc(100vh);
   width: calc(100% - #{$spacing-lr});
   max-width: 100vw;
@@ -155,7 +163,7 @@ $spacing-lr: calc(#{$spacing} * 2);
 /* #region title */
 .title-main {
   margin-top: calc(#{$spacing} / 2);
-  margin-bottom: calc(#{$spacing} + 10vw);
+  margin-bottom: calc(#{$spacing} + 8vw);
 
   font-family: 'NeueHaasGroteskDisp Pro Md';
   line-height: 1;

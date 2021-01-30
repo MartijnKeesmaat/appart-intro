@@ -133,6 +133,7 @@ introTl.from(
   '-=.6'
 );
 
+// Hide cookies
 const hideCookies = () => {
   gsap.to('.cookie-banner__content', {
     y: '100%',
@@ -144,5 +145,20 @@ const hideCookies = () => {
 
 const $cookie = [document.querySelector('.cookie-banner__accept'), document.querySelector('.cookie-banner__close')];
 $cookie.forEach((el) => el.addEventListener('click', hideCookies));
+
+// Click indicator
+const $clickIndicator = document.querySelector('.click-indicator');
+let indicatorIsClicked = false;
+
+const clickIndicator = (e) => {
+  if (!indicatorIsClicked) {
+    $clickIndicator.style.transform = `translate(${e.clientX + 15}px, ${e.clientY - 15}px)`;
+  } else {
+    $clickIndicator.style.opacity = 0;
+  }
+};
+
+window.addEventListener('mousemove', clickIndicator);
+window.addEventListener('mousedown', () => (indicatorIsClicked = true));
 
 /* #endregion */
