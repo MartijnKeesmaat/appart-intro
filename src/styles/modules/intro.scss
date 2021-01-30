@@ -47,7 +47,7 @@ $spacing-lr: calc(#{$spacing} * 2);
   position: relative;
 
   width: 100vw;
-  padding: 8px $spacing;
+  padding: 10px $spacing;
   margin-bottom: $spacing;
 
   display: flex;
@@ -64,7 +64,7 @@ $spacing-lr: calc(#{$spacing} * 2);
 
 .main-nav__link {
   @include swipe-border-hover;
-  margin-right: 40px;
+  margin-right: $spacing;
 
   font-family: 'NeueHaasGroteskDisp Pro Md';
   font-size: 16px;
