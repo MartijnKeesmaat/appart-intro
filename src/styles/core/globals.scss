@@ -1,0 +1,139 @@
+/* #region  Setup */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+::selection {
+  color: #fff;
+  background: var(--color-selection);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+}
+
+/* #endregion */
+
+/* #region  Nav */
+#main-header {
+  position: fixed;
+  width: 100vw;
+  top: -50px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  padding: 8px 23px;
+  background: var(--color-bg);
+  position: relative;
+
+  .logo {
+    display: flex;
+  }
+}
+
+.main-nav__link {
+  @include swipe-border-hover;
+  margin-right: 40px;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 96%;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+/* #endregion */
+
+/* #region  Cookie banner */
+.cookie-banner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  padding: 19px 23px;
+
+  background: #ffffff;
+}
+
+.cookie-banner__disclaimer {
+  margin: 0;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  color: var(--color-text);
+
+  a {
+    @include swipe-border-hover;
+    color: var(--color-main);
+  }
+}
+
+.cookie-banner__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cookie-banner__accept {
+  @include swipe-bg-hover;
+
+  font-family: 'NeueHaasGroteskDisp Pro Md';
+  font-size: 16px;
+  line-height: 96%;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  padding: 8px 24px;
+  margin-right: 16px;
+
+  border: none;
+  background: var(--color-bg);
+  border-radius: 31px;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cookie-banner__close {
+  display: flex;
+  align-items: center;
+
+  background: none;
+  border: none;
+  transition: 0.3s transform;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+/* #endregion */
