@@ -11,6 +11,18 @@ class ParticleSystem {
 
     this.createGrid();
 
+    var doit;
+    const that = this;
+    function resizedw() {
+      that.reset();
+    }
+    window.onresize = function () {
+      clearTimeout(doit);
+      doit = setTimeout(function () {
+        resizedw();
+      }, 100);
+    };
+
     this.grid.forEach((particleRow) => {
       particleRow.forEach((particle) => {
         const x = particle.pos.x * (this.size + this.spacing) + this.size / 2;
@@ -43,6 +55,8 @@ class ParticleSystem {
   }
 
   reset() {
+    resizeCanvas(document.getElementById('sketch__canvas-cover').offsetWidth, document.getElementById('sketch__canvas-cover').offsetHeight);
+
     this.particles.forEach((particle) => {
       particle.pos = createVector(width / 2, height / 2);
     });
