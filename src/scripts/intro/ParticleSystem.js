@@ -5,7 +5,7 @@ class ParticleSystem {
     this.grid = [];
 
     this.size = 1;
-    this.spacing = 20;
+    this.spacing = 25;
     this.lengthX = width / (this.size + this.spacing);
     this.lengthY = height / (this.size + this.spacing);
 

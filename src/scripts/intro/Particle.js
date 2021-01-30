@@ -1,6 +1,6 @@
 class Particle {
   constructor(r, x, y) {
-    this.pos = createVector(0, 0);
+    this.pos = createVector(0, -y);
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
@@ -16,9 +16,9 @@ class Particle {
     var flee = this.flee(mouse);
     var seek = this.seek(mouse);
 
-    arrive.mult(1);
+    arrive.mult(0.6);
     flee.mult(1.8);
-    seek.mult(10);
+    seek.mult(0.3);
 
     // this.applyForce(flee);
     if (mouseIsPressed) this.applyForce(seek);
@@ -43,7 +43,7 @@ class Particle {
     strokeWeight(this.r);
     // point(this.pos.x, this.pos.y);
 
-    const length = 5;
+    const length = 6;
     const center = length / 2;
 
     line(this.pos.x - center, this.pos.y, this.pos.x + center, this.pos.y);

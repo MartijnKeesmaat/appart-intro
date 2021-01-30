@@ -6,22 +6,14 @@
 html
   color: var(--color-text)
 
-  font-size: 62.5%
-
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
 
 body
-  display: flex
-  overflow: hidden
-
-  max-width: 100vw
-  max-height: 100vh
   margin: 0
-
-  background: #f0f0ec
+  background: #F1EFED
 
 ::selection
   color: #fff
@@ -35,267 +27,115 @@ body
 ::-webkit-scrollbar-thumb
   background-color: var(--scrollbar-color)
 
-img
-  max-width: 100%
-  height: auto
+// TODO var bg, hor spacing, load type, remove unwanted styling, transition to scss
 
-hr,
-.hr
-  display: block
 
-  height: 0.1rem
-  margin: 0
-  padding: 0
+#intro
+  max-width: 100vw
+  max-height: 100vw
+  padding-top: 50px
+  // overflow: hidden
 
-  border: 0
-  background: var(--color-border)
 
-.wrapper
-  max-width: 1000px
-  margin: 0 auto
-  padding: 30px
-
-figure
-  margin: 0
-
-.pace
-  -webkit-user-select: none
-  -moz-user-select: none
-  user-select: none
-  pointer-events: none
-
-  -webkit-pointer-events: none
-
-  &-inactive
-    display: none
-
-  & .pace-progress
-    position: fixed
-    z-index: 2000
-    top: 0
-    right: 100%
-
-    width: 100%
-    height: 2px
-
-    background: #243528
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary
-  display: block
-
-audio,
-canvas,
-video
-  display: inline-block
-
-audio:not([controls])
-  display: none
-
-  height: 0
-
-[hidden]
-  display: none
-
-body
-  margin: 0
-
-a:focus
-  outline: thin dotted
-
-a:active,
-a:hover
-  outline: 0
-
-h1
-  margin: 0.67em 0
-
-  font-size: 2em
-
-abbr[title]
-  border-bottom: 1px dotted
-
-b,
-strong
-  font-weight: bold
-
-dfn
-  font-style: italic
-
-mark
-  color: #000
-  background: #ff0
-
-code,
-kbd,
-pre,
-samp
-  font-family: monospace, serif
-  font-size: 1em
-
-pre
-  white-space: pre-wrap
-
-q
-  quotes: '\201C''\201D''\2018''\2019'
-
-small
-  font-size: 80%
-
-sub,
-sup
+#main-header
+  position: fixed
+  width: 100vw
+  top: -50px
+  left: 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid #000000
+  padding: 8px 23px
+  background: #F1EFED
   position: relative
 
-  vertical-align: baseline
-
-  font-size: 75%
-  line-height: 0
-
-sup
-  top: -0.5em
-
-sub
-  bottom: -0.25em
-
-img
-  border: 0
-
-svg:not(:root)
-  overflow: hidden
-
-figure
-  margin: 0
-
-fieldset
-  margin: 0 2px
-  padding: 0.35em 0.625em 0.75em
-
-  border: 1px solid #c0c0c0
-
-legend
-  padding: 0
-
-  border: 0
-
-button,
-input,
-select,
-textarea
-  margin: 0
-
-  font-family: inherit
-  font-size: 100%
-
-button,
-input
-  line-height: normal
-
-button,
-select
-  text-transform: none
-
-button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit']
-  cursor: pointer
-
-  -webkit-appearance: button
-
-button[disabled],
-html input[disabled]
-  cursor: default
-
-input[type='checkbox'],
-input[type='radio']
-  box-sizing: border-box
-  padding: 0
-
-input[type='search']
-  -webkit-box-sizing: content-box
-  -moz-box-sizing: content-box
-  box-sizing: content-box
-
-  -webkit-appearance: textfield
-
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration
-  -webkit-appearance: none
-
-button::-moz-focus-inner,
-input::-moz-focus-inner
-  padding: 0
-
-  border: 0
-
-textarea
-  overflow: auto
-
-  vertical-align: top
-
-table
-  border-spacing: 0
-
-  border-collapse: collapse
-
-main
+.logo
   display: flex
-  flex: 1
 
-@media(max-width: 800px)
-  body
-    overflow: initial
-    flex-direction: column
+.main-nav__link
+  font-family: "NeueHaasGroteskDisp Pro Md"
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 96%
+  margin-right: 40px
+  letter-spacing: -0.01em
+  color: #151515
+  position: relative
 
-  main
-    flex-direction: column
+  &:after
+    content: ''
+    transform: scaleX(0) 
+    background: inherit
+    width: 100%
+    height: 1px
+    position: absolute
+    bottom: 0
+    left: 0
 
-  .sketch__canvas
-    height: 480px !important
+  &:hover
+    color: orange
 
-  .sketch-details
-    display: block
+    &:hover
+      transform: scaleX(0) 
 
-  .sketch
-    height: initial !important
-    padding: 30px !important
+  &:last-child
+    margin-right: 0
 
-  .sketch__bottom
-    display: none !important
+.bold
 
-button.sketch__refresh,
-.sketch-details__btn
+.cookie-banner
+  position: absolute
+  left: 0
+  bottom: 0
+  width: 100vw
+  padding: 19px 23px
+  background: #FFFFFF
   display: flex
+  justify-content: space-between
   align-items: center
 
-  img
-    height: 13px
-    margin-right: 7px
 
-.color-overlay
-  position: fixed
+.cookie-banner__disclaimer
+  font-family: "NeueHaasGroteskDisp Pro Md"
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 120%
+  margin: 0
 
-  width: 100vw
-  height: 100vh
+  letter-spacing: -0.02em
 
-  transition: .3s all ease
-  pointer-events: none
+  color: #151515
 
-  opacity: 0
-  background: #97d8c6
+  a
+    
 
-  mix-blend-mode: difference
-  z-index: 10
+.cookie-banner__actions
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-  &.--is-active
-    opacity: 1
+  .cookie-banner__accept
+    background: #F1EFED
+    border-radius: 31px
+
+    font-family: "NeueHaasGroteskDisp Pro Md"
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 96%
+    /* or 15px */
+
+    text-align: center
+    letter-spacing: -0.01em
+
+    padding: 7px 24px
+    border: none
+  
+
+  .cookie-banner__close
+
+    img
+

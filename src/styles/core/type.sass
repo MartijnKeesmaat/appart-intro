@@ -47,20 +47,16 @@ h6,
 
 p,
 .p
-  max-width: 750px
-  margin: 0 0 1em 0
-
-  &:last-child
-    margin-bottom: 0
 
 a
   transition: var(--transition1)
   text-decoration: none
 
-  color: var(--color-text)
+
+  
 
 
-@import url(//db.onlinewebfonts.com/c/c891e94039740e4a24a9f53324fd91be?family=NeueHaasGroteskDisp+Pro+Md);
+
 
 
   
@@ -70,11 +66,20 @@ a
   font-family: "NeueHaasGroteskDisp Pro Md" 
   font-style: normal
   font-weight: normal
-  font-size: 190px
-  line-height: 100px
+  // font-size: calc(100vw / 19)
+  // line-height: 160px
+  line-height: 1
+  margin: 0
+  pointer-events: none
+  user-select: none
   /* or 184px */
 
   // text-align: center
   letter-spacing: -0.01em
 
   color: #151515
+  overflow: hidden
+
+  span
+    display: inline-block
+    padding-bottom: 8vw
