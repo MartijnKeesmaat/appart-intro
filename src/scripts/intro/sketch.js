@@ -1,5 +1,7 @@
 let system;
 
+console.log('asdf');
+
 function setup() {
   const canvas = document.querySelector('#sketch__canvas-cover');
   const cnv = createCanvas(canvas.offsetWidth, canvas.offsetHeight);
